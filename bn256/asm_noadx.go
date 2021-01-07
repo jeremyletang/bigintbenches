@@ -1,3 +1,5 @@
+// +build noadx
+
 // Copyright 2020 ConsenSys Software Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,32 +18,7 @@
 
 package bn256
 
-// q'[0], see montgommery multiplication algorithm
-var (
-	qElementInv0 uint64 = 9786893198990664585
-	_                   = qElementInv0 // used in asm
-)
-
-//go:noescape
-func add(res, x, y *Element)
-
-//go:noescape
-func sub(res, x, y *Element)
-
-//go:noescape
-func neg(res, x *Element)
-
-//go:noescape
-func double(res, x *Element)
-
-//go:noescape
-func mul(res, x, y *Element)
-
-//go:noescape
-func square(res, x *Element)
-
-//go:noescape
-func fromMont(res *Element)
-
-//go:noescape
-func reduce(res *Element)
+// note: this is needed for test purposes, as dynamically changing supportAdx doesn't flag
+// certain errors (like fatal error: missing stackmap)
+// this ensures we test all asm path.
+var supportAdx = false

@@ -28,18 +28,18 @@ func BenchmarkFibBigInt10(b *testing.B) { benchmarkFibBigInt(10, b) }
 func BenchmarkFibBigInt20(b *testing.B) { benchmarkFibBigInt(20, b) }
 func BenchmarkFibBigInt40(b *testing.B) { benchmarkFibBigInt(40, b) }
 
-func benchmarkFibGmpInt(i int, b *testing.B) {
-	for n := 0; n < b.N; n++ {
-		FibGmpInt(i)
-	}
-}
+// func benchmarkFibGmpInt(i int, b *testing.B) {
+// 	for n := 0; n < b.N; n++ {
+// 		FibGmpInt(i)
+// 	}
+// }
 
-func BenchmarkFibGmpInt1(b *testing.B)  { benchmarkFibGmpInt(1, b) }
-func BenchmarkFibGmpInt2(b *testing.B)  { benchmarkFibGmpInt(2, b) }
-func BenchmarkFibGmpInt3(b *testing.B)  { benchmarkFibGmpInt(3, b) }
-func BenchmarkFibGmpInt10(b *testing.B) { benchmarkFibGmpInt(10, b) }
-func BenchmarkFibGmpInt20(b *testing.B) { benchmarkFibGmpInt(20, b) }
-func BenchmarkFibGmpInt40(b *testing.B) { benchmarkFibGmpInt(40, b) }
+// func BenchmarkFibGmpInt1(b *testing.B)  { benchmarkFibGmpInt(1, b) }
+// func BenchmarkFibGmpInt2(b *testing.B)  { benchmarkFibGmpInt(2, b) }
+// func BenchmarkFibGmpInt3(b *testing.B)  { benchmarkFibGmpInt(3, b) }
+// func BenchmarkFibGmpInt10(b *testing.B) { benchmarkFibGmpInt(10, b) }
+// func BenchmarkFibGmpInt20(b *testing.B) { benchmarkFibGmpInt(20, b) }
+// func BenchmarkFibGmpInt40(b *testing.B) { benchmarkFibGmpInt(40, b) }
 
 func benchmarkFibInt(i int, b *testing.B) {
 	for n := 0; n < b.N; n++ {
